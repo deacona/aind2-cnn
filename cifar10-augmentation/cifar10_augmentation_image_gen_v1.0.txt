@@ -1,0 +1,10 @@
+from keras.preprocessing.image import ImageDataGenerator
+
+# create and configure augmented image generator
+datagen_train = ImageDataGenerator(
+    width_shift_range=0.1,  # randomly shift images horizontally (10% of total width)
+    height_shift_range=0.1,  # randomly shift images vertically (10% of total height)
+    horizontal_flip=True) # randomly flip images horizontally
+
+# fit augmented image generator on data
+datagen_train.fit(x_train)

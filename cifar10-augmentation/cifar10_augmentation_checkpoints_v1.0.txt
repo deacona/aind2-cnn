@@ -1,0 +1,105 @@
+from keras.callbacks import ModelCheckpoint   
+
+batch_size = 32
+epochs = 100
+
+# train the model
+checkpointer = ModelCheckpoint(filepath='aug_model.weights.best.hdf5', verbose=1, 
+                               save_best_only=True)
+model.fit_generator(datagen_train.flow(x_train, y_train, batch_size=batch_size),
+                    steps_per_epoch=x_train.shape[0] // batch_size,
+                    epochs=epochs, verbose=2, callbacks=[checkpointer],
+                    validation_data=(x_valid, y_valid),
+                    validation_steps=x_valid.shape[0] // batch_size)
+
+Epoch 1/100
+Epoch 00000: val_loss improved from inf to 1.32192, saving model to aug_model.weights.best.hdf5
+94s - loss: 1.6333 - acc: 0.4072 - val_loss: 1.3219 - val_acc: 0.5330
+Epoch 2/100
+Epoch 00001: val_loss improved from 1.32192 to 1.09603, saving model to aug_model.weights.best.hdf5
+90s - loss: 1.3431 - acc: 0.5183 - val_loss: 1.0960 - val_acc: 0.6156
+Epoch 3/100
+Epoch 00002: val_loss improved from 1.09603 to 1.02846, saving model to aug_model.weights.best.hdf5
+92s - loss: 1.2299 - acc: 0.5655 - val_loss: 1.0285 - val_acc: 0.6408
+Epoch 4/100
+Epoch 00003: val_loss improved from 1.02846 to 0.96770, saving model to aug_model.weights.best.hdf5
+89s - loss: 1.1776 - acc: 0.5842 - val_loss: 0.9677 - val_acc: 0.6632
+Epoch 5/100
+Epoch 00004: val_loss did not improve
+90s - loss: 1.1463 - acc: 0.5972 - val_loss: 1.0204 - val_acc: 0.6620
+Epoch 6/100
+Epoch 00005: val_loss did not improve
+88s - loss: 1.1413 - acc: 0.6036 - val_loss: 1.0307 - val_acc: 0.6436
+Epoch 7/100
+Epoch 00006: val_loss did not improve
+89s - loss: 1.1387 - acc: 0.6048 - val_loss: 1.0034 - val_acc: 0.6488
+Epoch 8/100
+Epoch 00007: val_loss did not improve
+90s - loss: 1.1389 - acc: 0.6088 - val_loss: 0.9837 - val_acc: 0.6598
+Epoch 9/100
+Epoch 00008: val_loss improved from 0.96770 to 0.95919, saving model to aug_model.weights.best.hdf5
+89s - loss: 1.1441 - acc: 0.6069 - val_loss: 0.9592 - val_acc: 0.6678
+Epoch 10/100
+Epoch 00009: val_loss improved from 0.95919 to 0.94158, saving model to aug_model.weights.best.hdf5
+87s - loss: 1.1626 - acc: 0.6034 - val_loss: 0.9416 - val_acc: 0.6854
+Epoch 11/100
+Epoch 00010: val_loss did not improve
+90s - loss: 1.1761 - acc: 0.6024 - val_loss: 1.0023 - val_acc: 0.6744
+Epoch 12/100
+Epoch 00011: val_loss did not improve
+91s - loss: 1.1865 - acc: 0.5974 - val_loss: 1.0263 - val_acc: 0.6628
+Epoch 13/100
+Epoch 00012: val_loss did not improve
+94s - loss: 1.2071 - acc: 0.5897 - val_loss: 1.0490 - val_acc: 0.6424
+Epoch 14/100
+Epoch 00013: val_loss did not improve
+94s - loss: 1.2333 - acc: 0.5843 - val_loss: 0.9651 - val_acc: 0.6726
+Epoch 15/100
+Epoch 00014: val_loss did not improve
+93s - loss: 1.2529 - acc: 0.5763 - val_loss: 1.1598 - val_acc: 0.5940
+Epoch 16/100
+Epoch 00015: val_loss did not improve
+96s - loss: 1.2706 - acc: 0.5733 - val_loss: 1.0608 - val_acc: 0.6312
+Epoch 17/100
+Epoch 00016: val_loss did not improve
+93s - loss: 1.2773 - acc: 0.5705 - val_loss: 1.0291 - val_acc: 0.6610
+Epoch 18/100
+Epoch 00017: val_loss did not improve
+94s - loss: 1.2875 - acc: 0.5699 - val_loss: 1.0121 - val_acc: 0.6584
+Epoch 19/100
+Epoch 00018: val_loss did not improve
+97s - loss: 1.3032 - acc: 0.5649 - val_loss: 1.0017 - val_acc: 0.6598
+Epoch 20/100
+Epoch 00019: val_loss did not improve
+95s - loss: 1.3266 - acc: 0.5557 - val_loss: 1.0365 - val_acc: 0.6534
+Epoch 21/100
+Epoch 00020: val_loss did not improve
+95s - loss: 1.3396 - acc: 0.5522 - val_loss: 1.1461 - val_acc: 0.5920
+Epoch 22/100
+Epoch 00021: val_loss did not improve
+96s - loss: 1.3661 - acc: 0.5457 - val_loss: 1.0252 - val_acc: 0.6478
+Epoch 23/100
+Epoch 00022: val_loss did not improve
+90s - loss: 1.3739 - acc: 0.5401 - val_loss: 1.0386 - val_acc: 0.6454
+Epoch 24/100
+Epoch 00023: val_loss did not improve
+91s - loss: 1.3934 - acc: 0.5326 - val_loss: 1.1258 - val_acc: 0.6286
+Epoch 25/100
+Epoch 00024: val_loss did not improve
+93s - loss: 1.4218 - acc: 0.5246 - val_loss: 1.0902 - val_acc: 0.6386
+Epoch 26/100
+Epoch 00025: val_loss did not improve
+91s - loss: 1.4286 - acc: 0.5215 - val_loss: 1.1497 - val_acc: 0.6086
+Epoch 27/100
+Epoch 00026: val_loss did not improve
+90s - loss: 1.4486 - acc: 0.5117 - val_loss: 1.2160 - val_acc: 0.5862
+Epoch 28/100
+Epoch 00027: val_loss did not improve
+89s - loss: 1.4580 - acc: 0.5120 - val_loss: 1.1539 - val_acc: 0.6090
+Epoch 29/100
+Epoch 00028: val_loss did not improve
+90s - loss: 1.4737 - acc: 0.5057 - val_loss: 1.1343 - val_acc: 0.6046
+Epoch 30/100
+
+---------------------------------------------------------------------------
+KeyboardInterrupt                         Traceback (most recent call last)
