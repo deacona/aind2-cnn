@@ -1,0 +1,177 @@
+from keras.callbacks import ModelCheckpoint   
+
+# train the model
+checkpointer = ModelCheckpoint(filepath='model.weights.best.hdf5', verbose=1, 
+                               save_best_only=True)
+hist = model.fit(x_train, y_train, batch_size=32, epochs=100,
+          validation_data=(x_valid, y_valid), callbacks=[checkpointer], 
+          verbose=2, shuffle=True)
+
+Train on 45000 samples, validate on 5000 samples
+Epoch 1/100
+Epoch 00000: val_loss improved from inf to 1.75907, saving model to model.weights.best.hdf5
+546s - loss: 1.5471 - acc: 0.4413 - val_loss: 1.7591 - val_acc: 0.4546
+Epoch 2/100
+Epoch 00001: val_loss improved from 1.75907 to 1.10150, saving model to model.weights.best.hdf5
+578s - loss: 1.1200 - acc: 0.6072 - val_loss: 1.1015 - val_acc: 0.6040
+Epoch 3/100
+Epoch 00002: val_loss improved from 1.10150 to 1.02029, saving model to model.weights.best.hdf5
+578s - loss: 1.0017 - acc: 0.6554 - val_loss: 1.0203 - val_acc: 0.6464
+Epoch 4/100
+Epoch 00003: val_loss did not improve
+518s - loss: 0.9699 - acc: 0.6708 - val_loss: 1.2111 - val_acc: 0.6276
+Epoch 5/100
+Epoch 00004: val_loss did not improve
+565s - loss: 0.9723 - acc: 0.6774 - val_loss: 1.2224 - val_acc: 0.5922
+Epoch 6/100
+Epoch 00005: val_loss did not improve
+563s - loss: 0.9892 - acc: 0.6735 - val_loss: 1.1748 - val_acc: 0.6510
+Epoch 7/100
+Epoch 00006: val_loss improved from 1.02029 to 0.97781, saving model to model.weights.best.hdf5
+564s - loss: 1.0131 - acc: 0.6717 - val_loss: 0.9778 - val_acc: 0.6802
+Epoch 8/100
+Epoch 00007: val_loss did not improve
+563s - loss: 1.0263 - acc: 0.6680 - val_loss: 1.2667 - val_acc: 0.6214
+Epoch 9/100
+Epoch 00008: val_loss did not improve
+564s - loss: 1.0518 - acc: 0.6568 - val_loss: 2.4035 - val_acc: 0.5402
+Epoch 10/100
+Epoch 00009: val_loss did not improve
+567s - loss: 1.0956 - acc: 0.6494 - val_loss: 1.6606 - val_acc: 0.5634
+Epoch 11/100
+Epoch 00010: val_loss did not improve
+565s - loss: 1.1138 - acc: 0.6433 - val_loss: 1.1216 - val_acc: 0.6256
+Epoch 12/100
+Epoch 00011: val_loss did not improve
+567s - loss: 1.1485 - acc: 0.6358 - val_loss: 1.1625 - val_acc: 0.6046
+Epoch 13/100
+Epoch 00012: val_loss did not improve
+570s - loss: 1.1829 - acc: 0.6228 - val_loss: 1.3479 - val_acc: 0.6082
+Epoch 14/100
+Epoch 00013: val_loss did not improve
+571s - loss: 1.2166 - acc: 0.6144 - val_loss: 1.2080 - val_acc: 0.6306
+Epoch 15/100
+Epoch 00014: val_loss did not improve
+574s - loss: 1.2722 - acc: 0.5997 - val_loss: 1.5718 - val_acc: 0.5892
+Epoch 16/100
+Epoch 00015: val_loss did not improve
+573s - loss: 1.2935 - acc: 0.5910 - val_loss: 1.1260 - val_acc: 0.6078
+Epoch 17/100
+Epoch 00016: val_loss did not improve
+575s - loss: 1.3040 - acc: 0.5821 - val_loss: 1.2753 - val_acc: 0.6368
+Epoch 18/100
+Epoch 00017: val_loss did not improve
+573s - loss: 1.3696 - acc: 0.5676 - val_loss: 1.1395 - val_acc: 0.6384
+Epoch 19/100
+Epoch 00018: val_loss did not improve
+573s - loss: 1.3905 - acc: 0.5589 - val_loss: 2.4268 - val_acc: 0.4802
+Epoch 20/100
+Epoch 00019: val_loss did not improve
+575s - loss: 1.4232 - acc: 0.5453 - val_loss: 1.5756 - val_acc: 0.5226
+Epoch 21/100
+Epoch 00020: val_loss did not improve
+575s - loss: 1.4734 - acc: 0.5326 - val_loss: 1.7664 - val_acc: 0.4674
+Epoch 22/100
+Epoch 00021: val_loss did not improve
+576s - loss: 1.5325 - acc: 0.5053 - val_loss: 2.1339 - val_acc: 0.4728
+Epoch 23/100
+Epoch 00022: val_loss did not improve
+577s - loss: 1.5533 - acc: 0.4963 - val_loss: 1.5711 - val_acc: 0.3948
+Epoch 24/100
+Epoch 00023: val_loss did not improve
+575s - loss: 1.6104 - acc: 0.4763 - val_loss: 1.2124 - val_acc: 0.5878
+Epoch 25/100
+Epoch 00024: val_loss did not improve
+574s - loss: 1.6399 - acc: 0.4634 - val_loss: 1.4369 - val_acc: 0.4688
+Epoch 26/100
+Epoch 00025: val_loss did not improve
+576s - loss: 1.6852 - acc: 0.4470 - val_loss: 1.2763 - val_acc: 0.5600
+Epoch 27/100
+Epoch 00026: val_loss did not improve
+574s - loss: 1.7378 - acc: 0.4264 - val_loss: 1.8799 - val_acc: 0.3434
+Epoch 28/100
+Epoch 00027: val_loss did not improve
+574s - loss: 1.7408 - acc: 0.4210 - val_loss: 2.7985 - val_acc: 0.3876
+Epoch 29/100
+Epoch 00028: val_loss did not improve
+577s - loss: 1.7685 - acc: 0.4089 - val_loss: 6.8383 - val_acc: 0.2166
+Epoch 30/100
+Epoch 00029: val_loss did not improve
+575s - loss: 1.8188 - acc: 0.3963 - val_loss: 3.7905 - val_acc: 0.2088
+Epoch 31/100
+Epoch 00030: val_loss did not improve
+575s - loss: 1.8551 - acc: 0.3686 - val_loss: 1.4659 - val_acc: 0.4636
+Epoch 32/100
+Epoch 00031: val_loss did not improve
+576s - loss: 1.8715 - acc: 0.3695 - val_loss: 1.7259 - val_acc: 0.3324
+Epoch 33/100
+Epoch 00032: val_loss did not improve
+575s - loss: 1.9548 - acc: 0.3395 - val_loss: 1.7257 - val_acc: 0.3668
+Epoch 34/100
+Epoch 00033: val_loss did not improve
+574s - loss: 1.9727 - acc: 0.3261 - val_loss: 4.2335 - val_acc: 0.3782
+Epoch 35/100
+Epoch 00034: val_loss did not improve
+575s - loss: 1.9794 - acc: 0.3174 - val_loss: 1.6420 - val_acc: 0.4056
+Epoch 36/100
+Epoch 00035: val_loss did not improve
+565s - loss: 2.0070 - acc: 0.3054 - val_loss: 1.7527 - val_acc: 0.3456
+Epoch 37/100
+Epoch 00036: val_loss did not improve
+554s - loss: 2.0150 - acc: 0.2879 - val_loss: 1.6682 - val_acc: 0.3422
+Epoch 38/100
+Epoch 00037: val_loss did not improve
+554s - loss: 2.0615 - acc: 0.2764 - val_loss: 1.8664 - val_acc: 0.2726
+Epoch 39/100
+Epoch 00038: val_loss did not improve
+560s - loss: 2.0454 - acc: 0.2682 - val_loss: 1.9769 - val_acc: 0.2778
+Epoch 40/100
+Epoch 00039: val_loss did not improve
+569s - loss: 2.0459 - acc: 0.2636 - val_loss: 3.1157 - val_acc: 0.2786
+Epoch 41/100
+Epoch 00040: val_loss did not improve
+554s - loss: 2.0558 - acc: 0.2557 - val_loss: 2.3896 - val_acc: 0.1294
+Epoch 42/100
+Epoch 00041: val_loss did not improve
+555s - loss: 2.0915 - acc: 0.2419 - val_loss: 1.7882 - val_acc: 0.3028
+Epoch 43/100
+Epoch 00042: val_loss did not improve
+555s - loss: 2.0684 - acc: 0.2385 - val_loss: 1.8343 - val_acc: 0.2816
+Epoch 44/100
+Epoch 00043: val_loss did not improve
+554s - loss: 2.0801 - acc: 0.2420 - val_loss: 1.8351 - val_acc: 0.2814
+Epoch 45/100
+Epoch 00044: val_loss did not improve
+554s - loss: 2.1152 - acc: 0.2206 - val_loss: 1.7926 - val_acc: 0.2704
+Epoch 46/100
+Epoch 00045: val_loss did not improve
+554s - loss: 2.0975 - acc: 0.2264 - val_loss: 1.9643 - val_acc: 0.2860
+Epoch 47/100
+Epoch 00046: val_loss did not improve
+555s - loss: 2.0840 - acc: 0.2220 - val_loss: 2.0355 - val_acc: 0.2976
+Epoch 48/100
+Epoch 00047: val_loss did not improve
+555s - loss: 2.1056 - acc: 0.2160 - val_loss: 1.8066 - val_acc: 0.2762
+Epoch 49/100
+Epoch 00048: val_loss did not improve
+555s - loss: 2.0980 - acc: 0.2108 - val_loss: 1.8163 - val_acc: 0.2564
+Epoch 50/100
+Epoch 00049: val_loss did not improve
+555s - loss: 2.0748 - acc: 0.2111 - val_loss: 2.0835 - val_acc: 0.2140
+Epoch 51/100
+Epoch 00050: val_loss did not improve
+555s - loss: 2.0990 - acc: 0.2194 - val_loss: 1.8429 - val_acc: 0.2768
+Epoch 52/100
+Epoch 00051: val_loss did not improve
+554s - loss: 2.1427 - acc: 0.2015 - val_loss: 1.9872 - val_acc: 0.1918
+Epoch 53/100
+Epoch 00052: val_loss did not improve
+554s - loss: 2.1298 - acc: 0.2050 - val_loss: 2.0746 - val_acc: 0.1990
+Epoch 54/100
+Epoch 00053: val_loss did not improve
+553s - loss: 2.1260 - acc: 0.1964 - val_loss: 2.1291 - val_acc: 0.1654
+Epoch 55/100
+
+---------------------------------------------------------------------------
+KeyboardInterrupt                         Traceback (most recent call last)
+...
